@@ -21,8 +21,22 @@ Mỗi video: tracker bạn nộp, `conf`, `iou`, điều bạn **nhìn thấy** 
 Dán bảng HOTA / MOTA / IDF1 do `scripts/evaluate_practice.py` in ra.
 
 ```
-(dán output ở đây)
+HOTA: nop_bai_video1-pedestrian    HOTA      DetA      AssA      DetRe     DetPr     AssRe     AssPr     LocA      OWTA      HOTA(0)   LocA(0)   HOTALocA(0)
+video_1                            29.523    19.561    44.952    20.335    75.327    47.931    82.084    82.598    30.152    36.707    76.442    28.059
+COMBINED                           29.523    19.561    44.952    20.335    75.327    47.931    82.084    82.598    30.152    36.707    76.442    28.059
+CLEAR: nop_bai_video1-pedestrian   MOTA      MOTP      MODA      CLR_Re    CLR_Pr    MTR       PTR       MLR       sMOTA     CLR_TP    CLR_FN    CLR_FP    IDSW      MT        PT        ML        Frag
+video_1                            21.005    80.163    21.129    24.062    89.135    12.903    20.968    66.129    16.232    4471      14110     545       23        8         13        41        64
+COMBINED                           21.005    80.163    21.129    24.062    89.135    12.903    20.968    66.129    16.232    4471      14110     545       23        8         13        41        64
+Identity: nop_bai_video1-pedestrianIDF1      IDR       IDP       IDTP      IDFN      IDFP
+video_1                            30.3      19.24     71.272    3575      15006     1441
+COMBINED                           30.3      19.24     71.272    3575      15006     1441
 ```
+
+Cấu hình nộp: `botsort`, `conf 0.1`, `iou 0.5`, chạy đủ 600 frame.
+
+| HOTA | DetA | AssA | MOTA | IDF1 | IDSW | FP | FN |
+|---|---|---|---|---|---|---|---|
+| 29.5 | 19.6 | 45.0 | 21.0 | 30.3 | 23 | 545 | 14110 |
 
 `video_2` đến `video_5` không có nhãn trong gói lab. Không điền số cho các video đó.
 
