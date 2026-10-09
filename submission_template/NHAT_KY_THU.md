@@ -110,7 +110,7 @@ Quan sát trên frame mẫu (1, 30, 50, 80, 100, 120, 150):
 - **video_2:** Cả hai tracker giữ ID ổn với người đã phát hiện (BoT-SORT giữ ID 1, 2, 3, 4, 6 suốt frame 30–150), nhưng chỉ ~10 trên 40+ người có hộp; đám đông nhỏ phía trên gần như bị bỏ sót. Hạ `conf` xuống 0.15 thêm người mà không thấy hộp giả, và track dài hơn vì ít frame bị mất phát hiện.
 - **video_3:** Ở `conf 0.15` các hộp thêm là người thật (người nhỏ phía xa, người lấp ló mép trái). StrongSORT giữ ID người đàn ông áo vest và người phụ nữ áo sọc khi họ đứng sát nhau. `iou 0.4` cắt bớt hộp trùng khi người đứng chồng lên nhau, ít ID mới hơn.
 - **video_4:** DeepOCSORT ở `conf 0.15` vẽ hộp lên **bóng phản chiếu** trên lan can kính và sàn bóng (ID 22, 45 — không có người), gây 34 ID. ByteTrack cùng `conf` không bị, vì nó chỉ mở track mới từ hộp điểm cao; hộp điểm thấp chỉ dùng để nối track cũ. Áo đỏ (ID 2) và áo trắng (ID 5) giữ ID suốt frame 30–150. `iou` không ảnh hưởng ở cảnh thưa này.
-- **video_5:** BoT-SORT đổi ID người bên trái (7 → 15) và đẩy số ID lên 50+ vào frame 150; Re-ID trên người nhỏ, ảnh rung không đáng tin. OC-SORT ổn hơn. `conf 0.15` làm OC-SORT vỡ (57 ID, 24 track ngắn) vì hộp giả nhấp nháy khi xe rung.
+- **video_5:** BoT-SORT đổi ID người bên trái (7 → 15) và đẩy số ID lên 50+ vào frame 150; Re-ID trên người nhỏ, ảnh rung không đáng tin. OC-SORT ổn hơn. `conf 0.15` làm OC-SORT vỡ (57 ID, 24 track dưới 10 frame): hộp điểm thấp xuất hiện rồi mất liên tục khi xe rung, mỗi lần lại mở ID mới.
 
 ### Cấu hình chọn
 
